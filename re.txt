@@ -1,0 +1,4 @@
+unstructured
+langchain
+openai
+chromadb
