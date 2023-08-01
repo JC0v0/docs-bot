@@ -7,7 +7,10 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from langchain.memory import ConversationBufferMemory
+import os
 
+os.environ["OPENAI_API_BASE"]="https://api.jingcheng.love/v1"
+os.environ["OPENAI_API_KEY"]="sk-Dt0A7pMAVQMqExD76d0aA96700Ad4a3e9e46D3D2F4Db545a"
 st.title("文档GPT")
 
 #加载文档
@@ -31,7 +34,7 @@ Question: {question}
 Helpful Answer:"""
 QA_CHAIN_PROMPT = PromptTemplate.from_template(template)
 
-llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0,openai_api_base="https://api.jingcheng.love/v1",openai_api_key="sk-Dt0A7pMAVQMqExD76d0aA96700Ad4a3e9e46D3D2F4Db545a")
+llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 qa_chain = RetrievalQA.from_chain_type(
     llm,
