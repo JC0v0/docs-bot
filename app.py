@@ -10,7 +10,7 @@ from langchain.memory import ConversationBufferMemory
 import os
 
 os.environ["OPENAI_API_BASE"]="https://api.jingcheng.love/v1"
-os.environ["OPENAI_API_KEY"]="sk-Dt0A7pMAVQMqExD76d0aA96700Ad4a3e9e46D3D2F4Db545a"
+os.environ["OPENAI_API_KEY"]=""
 st.title("文档GPT")
 
 #加载文档
